@@ -1,0 +1,50 @@
+nav{
+    background: linear-gradient(34deg, #F88657,#F06161,#D9604C);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nav-link,.navbar-brand{
+    color: white!important;
+
+}
+
+.card-img-top{
+    max-width: 500px;
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f093fb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom right, #F88657, #F06161);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, #F88657, #F06161)
+    }
+    
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+
+.register:hover i {
+    color: black!important;
+}
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #F88657;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #F88657, #F06161,#D9604C);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right,  #F88657, #F06161,#D9604C)
+    }   
+

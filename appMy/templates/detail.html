@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block body %}
+ 
+    <div class="card mt-3 mb-3">
+        <img src="{{post.postImg.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6> <small>{{post.user.first_name}} {{post.user.last_name}}</small> </h6>
+          <h5 class="card-title">{{post.postTitle}}</h5>
+          <p class="card-text">{{post.postText}}</p>
+          <p class="card-text"><small class="text-body-secondary">{{post.postTime}}</small></p>
+        </div>
+      </div>
+
+
+        <section style="background-color: #e7effd;">
+            <div class="container my-5 py-5 text-dark">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-11 col-lg-9 col-xl-7">
+                  
+                  
+                  {% for i in comment %}   
+                  <div class="d-flex flex-start mb-4">
+                    
+                    
+                    <img class="rounded-circle shadow-1-strong me-3"
+                    src="{{i.user.profil.profil_img.url}}" alt="avatar" width="65"
+                    height="65" />
+                    <h1>{{i.user_id}}</h1>
+                    <div class="card w-100">
+                      <div class="card-body p-4">
+                        <div class="">
+                          <h5>{{i.user.first_name}} {{i.user.last_name}}</h5>
+                          <p class="small">{{i.commentTime}}</p>
+                          <p>
+                            {{i.comment}}
+                          </p>
+          
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                              <a href="#!" class="link-muted me-2"><i class="fas fa-thumbs-up me-1"></i>132</a>
+                              <a href="#!" class="link-muted"><i class="fas fa-thumbs-down me-1"></i>15</a>
+                            </div>
+                            <a href="#!" class="link-muted"><i class="fas fa-reply me-1"></i> Reply</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                  
+                  {% if request.user.is_authenticated %}
+                    
+                  <div class="mx-auto" style="background-color: #ffffff; width:fit-content;">
+                    <form class="p-2" action="" method="POST" >
+                      {% csrf_token %}
+                      <h6> <small> {{request.user.first_name}} {{request.user.last_name}}</small></h6>
+                      <label class="d-flex" for="">Yorum yap</label>
+                      <input type="text" name="comment">
+                      <button type="submit" class="btn btn-danger">Gönder</button>
+                    </form>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </section>  
+{% endblock body  %}
